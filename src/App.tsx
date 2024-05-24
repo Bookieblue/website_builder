@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Calculator from './component/Calculator'
+import Hero from './component/Hero';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="max-container padding-container w-full flex-col flexCenter">
+      <h1 className="font-bold my-5 text-4xl text-[#353fa9]">
+         Web-Calumaths
+      </h1>
+      <div className="flexBetween flex-col lg:flex-row  w-full">
+     <Hero />
+     <Calculator />
+     </div>
+    </section>
   );
 }
 
