@@ -101,12 +101,18 @@ const Calculator = () => {
       </div>
       {/* buttons */}
       <div className="grid grid-cols-4 gap-2 pt-4">
-        {calculator_buttons.map((button, index) => (
+      {calculator_buttons.map((button, index) => (
           <button
             key={index}
-            className={`btn_${button.type} ${
-              button.span ? `col-span-${button.span}` : ""
-            } transform transition-transform duration-200 ease-in-out active:scale-95`}
+            className={`${
+              button.type === "numbers"
+                ? "bg-[#f8f5f3] hover:bg-white text-black py-2 px-4 rounded"
+                : button.type === "operation"
+                ? "bg-blue-700 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                : button.type === "delete_last"
+                ? "bg-green-500 hover:bg-green-500 text-white  py-2 px-4 rounded"
+                : "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
+            } ${button.span ? `col-span-${button.span}` : ""} transform transition-transform duration-200 ease-in-out active:scale-95`}
             onClick={() => handleButtonClick(button)}
           >
             {button.label}
