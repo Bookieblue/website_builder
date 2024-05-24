@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { calculator_buttons } from "../constants";
-import { create, all } from 'mathjs';
-
+import { create, all } from "mathjs";
 
 const math = create(all);
 
@@ -34,20 +33,20 @@ const Calculator = () => {
   const Result = () => {
     try {
       let expression = operand
-        .replace("pi", "pi") 
-        .replace(/sqrt\(/g, "sqrt(") 
-        .replace(/(\d+)\^2/g, (_, n) => `(${n}^2)`) 
-        .replace(/(\d+)!/g, (_, n) => factorial(parseInt(n)).toString()); 
+        .replace("pi", "pi")
+        .replace(/sqrt\(/g, "sqrt(")
+        .replace(/(\d+)\^2/g, (_, n) => `(${n}^2)`)
+        .replace(/(\d+)!/g, (_, n) => factorial(parseInt(n)).toString());
 
-        // To close the open parentheses for square root function
-      let openParenthesesCount = (expression.match(/Math.sqrt\(/g) || [])
-        .length;
+      // To close the open parentheses for square root function
+
+      let openParenthesesCount = (expression.match(/sqrt\(/g) || []).length;
       let closeParenthesesCount = (expression.match(/\)/g) || []).length;
+
       while (openParenthesesCount > closeParenthesesCount) {
         expression += ")";
         closeParenthesesCount++;
       }
-  
       const calcResult = math.evaluate(expression);
       setResult(calcResult.toString());
       setIsResultDisplayed(true);
@@ -56,7 +55,7 @@ const Calculator = () => {
       setResult("0");
     }
   };
-  
+
   // const Result = () => {
   //   try {
   //     let expression = operand
@@ -87,7 +86,7 @@ const Calculator = () => {
     if (n === 0) return 1;
     return n * factorial(n - 1);
   };
-  //function to calculate the percentage of number 
+  //function to calculate the percentage of number
   const calculatePercentage = () => {
     try {
       const value = parseFloat(operand);
@@ -127,7 +126,7 @@ const Calculator = () => {
       </div>
       {/* buttons */}
       <div className="grid grid-cols-4 gap-2 pt-4">
-      {calculator_buttons.map((button, index) => (
+        {calculator_buttons.map((button, index) => (
           <button
             key={index}
             className={`${
@@ -138,7 +137,9 @@ const Calculator = () => {
                 : button.type === "delete_last"
                 ? "bg-green-500 hover:bg-green-500 text-white  py-2 px-4 rounded"
                 : "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
-            } ${button.label === "0" ? "col-span-2" : ""} transform transition-transform duration-200 ease-in-out active:scale-95`}
+            } ${
+              button.label === "0" ? "col-span-2" : ""
+            } transform transition-transform duration-200 ease-in-out active:scale-95`}
             onClick={() => handleButtonClick(button)}
           >
             {button.label}
