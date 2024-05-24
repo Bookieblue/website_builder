@@ -56,30 +56,6 @@ const Calculator = () => {
     }
   };
 
-  // const Result = () => {
-  //   try {
-  //     let expression = operand
-  //       .replace("^2", "**2")
-  //       .replace("pi", "Math.PI")
-  //       .replace(/sqrt\(/g, "Math.sqrt(")
-  //       .replace(/(\d+)!/g, (_, n) => factorial(parseInt(n)).toString());
-  //     // To close the open parentheses for square root function
-  //     let openParenthesesCount = (expression.match(/Math.sqrt\(/g) || [])
-  //       .length;
-  //     let closeParenthesesCount = (expression.match(/\)/g) || []).length;
-  //     while (openParenthesesCount > closeParenthesesCount) {
-  //       expression += ")";
-  //       closeParenthesesCount++;
-  //     }
-
-  //     const calcResult = math.evaluate(expression);
-  //     setResult(calcResult.toString());
-  //     setIsResultDisplayed(true);
-  //   } catch (e) {
-  //     setOperand("Invalid Operation");
-  //     setResult("0");
-  //   }
-  // };
   //function to calculate the factorial on the screen
   const factorial = (n: number): number => {
     if (n < 0) return NaN;
