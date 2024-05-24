@@ -107,12 +107,12 @@ const Calculator = () => {
             key={index}
             className={`${
               button.type === "numbers"
-                ? "bg-[#f8f5f3] hover:bg-white text-black py-2 px-4 rounded"
+                ? "bg-[#f8f5f3] hover:bg-white text-black py-2 px-4 rounded hover:border-gray-100"
                 : button.type === "operation"
-                ? "bg-blue-700 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                ? "bg-blue-700 hover:bg-blue-700 text-white py-2 px-4 rounded hover:border-gray-100"
                 : button.type === "delete_last"
-                ? "bg-green-500 hover:bg-green-500 text-white  py-2 px-4 rounded"
-                : "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
+                ? "bg-green-500 hover:bg-green-500 text-white  py-2 px-4 rounded hover:border-gray-100"
+                : "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded hover:border-gray-100"
             } ${
               button.label === "0" ? "col-span-2" : ""
             } transform transition-transform duration-200 ease-in-out active:scale-95`}
