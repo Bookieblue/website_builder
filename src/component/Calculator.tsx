@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { calculator_buttons } from "../constants";
+import { create, all } from 'mathjs';
+
+
+const math = create(all);
 
 const Calculator = () => {
   const [operand, setOperand] = useState<string>("0");
@@ -43,7 +47,7 @@ const Calculator = () => {
         closeParenthesesCount++;
       }
 
-      const calcResult = eval(expression);
+      const calcResult = math.evaluate(expression);
       setResult(calcResult.toString());
       setIsResultDisplayed(true);
     } catch (e) {
