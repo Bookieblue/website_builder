@@ -112,7 +112,7 @@ const Calculator = () => {
                 : button.type === "delete_last"
                 ? "bg-green-500 hover:bg-green-500 text-white  py-2 px-4 rounded"
                 : "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
-            } ${button.span ? `col-span-${button.span}` : ""} transform transition-transform duration-200 ease-in-out active:scale-95`}
+            } ${button.label === "0" ? "col-span-2" : ""} transform transition-transform duration-200 ease-in-out active:scale-95`}
             onClick={() => handleButtonClick(button)}
           >
             {button.label}
