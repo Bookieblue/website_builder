@@ -107,7 +107,7 @@ const Calculator = () => {
             key={index}
             className={`${
               button.type === "numbers"
-                ? "bg-[#f8f5f3] hover:bg-white text-black py-2 px-4 rounded hover:border-gray-100"
+                ? "bg-[#f8f5f3] hover:bg-white text-black py-2 px-4 rounded border border-[#f8f5f3] hover:border-gray-100"
                 : button.type === "operation"
                 ? "bg-blue-700 hover:bg-blue-700 text-white py-2 px-4 rounded hover:border-gray-100"
                 : button.type === "delete_last"
