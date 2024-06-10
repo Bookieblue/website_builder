@@ -1,20 +1,18 @@
-import Calculator from './component/Calculator'
-import Hero from './component/Hero';
+import React from 'react';
+import { useStore } from './store';
+import Header from '../src/component/Header';
+import Features from '../src/component/Feature';
+import Footer from '../src/component/Footer';
+import Admin from './pages/admin';
 
-function App() {
-
+const App: React.FC = () => {
+  
 
   return (
-    <section className="max-container padding-container w-full flex-col flexCenter">
-      <h1 className="font-bold my-5 text-4xl text-[#353fa9]">
-         Web-Calmaths
-      </h1>
-      <div className="flexBetween flex-col lg:flex-row  w-full">
-     <Hero />
-     <Calculator />
-     </div>
-    </section>
+    <div>
+       <Admin />
+    </div>
   );
-}
+};
 
 export default App;
